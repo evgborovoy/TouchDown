@@ -19,6 +19,16 @@ struct ContentView: View {
             ScrollView(.vertical) {
                 FeaturedTabView()
                 
+                CategoryGridView()
+                
+                TitleView(title: "Helmets")
+                LazyVGrid(columns: gridLayout, spacing: 14) {
+                    ForEach(products) {product in
+                        ProductItemView(product: product)
+                    }
+                }
+                .padding()
+                
                 FooterView()
                     .padding(.horizontal)
             }
