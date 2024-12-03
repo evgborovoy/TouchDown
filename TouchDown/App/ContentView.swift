@@ -16,10 +16,12 @@ struct ContentView: View {
                 .background(.white)
                 .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 10)
             
-            Spacer()
-            
-            FooterView()
-                .padding(.horizontal)
+            ScrollView(.vertical) {
+                FeaturedTabView()
+                
+                FooterView()
+                    .padding(.horizontal)
+            }
         }
         .background {
             Color.colorBackground.ignoresSafeArea()
